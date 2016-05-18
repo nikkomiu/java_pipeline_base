@@ -1,0 +1,29 @@
+{
+  "variables": {
+    "docker_image": "java_pipeline/base"
+  },
+  "builders": [
+    {
+      "type": "docker",
+      "image": "centos",
+      "commit": "true"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "chef-solo",
+      "prevent_sudo": true,
+      "cookbook_paths": ["cookbooks"]
+    }
+  ],
+  "post-processors": [
+    [
+      {
+        "type": "docker-tag",
+        "repository": "{{user `docker_image`}}",
+        "tag": "1.0"
+      },
+      "docker-push"
+    ]
+  ]
+}
