@@ -1,5 +1,6 @@
 {
   "variables": {
+    "revision": "1",
     "java_version": "8",
     "tomcat_version": "8.0.35",
     "docker_image": "java_pipeline/base"
@@ -39,7 +40,7 @@
       {
         "type": "docker-tag",
         "repository": "{{user `docker_image`}}",
-        "tag": "1.0"
+        "tag": "j{{user `java_version`}}t{{user `tomcat_version`}}r{{user `revision`}}"
       },
       "docker-push"
     ]
