@@ -1,5 +1,6 @@
 {
   "variables": {
+    "java_version": "8",
     "docker_image": "java_pipeline/base"
   },
   "builders": [
@@ -21,7 +22,12 @@
     {
       "type": "chef-solo",
       "prevent_sudo": true,
-      "cookbook_paths": ["cookbooks"]
+      "cookbook_paths": ["cookbooks"],
+      "json": {
+        "java": {
+          "jdk_version": "{{user `java_version`}}"
+        },
+      }
     }
   ],
   "post-processors": [
