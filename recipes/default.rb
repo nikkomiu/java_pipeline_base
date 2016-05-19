@@ -6,10 +6,10 @@
 
 include_recipe "java"
 
-tomcat_install 'default' do
-  version '8.0.35'
+tomcat_install node['java_pipeline']['tomcat_instance'] do
+  version node['java_pipeline']['tomcat_version']
 end
 
-tomcat_service 'default' do
+tomcat_service node['java_pipeline']['tomcat_instance'] do
   action [:enable, :start]
 end
