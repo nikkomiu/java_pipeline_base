@@ -11,6 +11,10 @@
   ],
   "provisioners": [
     {
+      "type": "shell",
+      "inline": "apt-get update && apt-get install curl -y"
+    },
+    {
       "type": "chef-solo",
       "prevent_sudo": true,
       "cookbook_paths": ["cookbooks"]
