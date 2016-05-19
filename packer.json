@@ -11,6 +11,10 @@
   ],
   "provisioners": [
     {
+      "type": "shell-local",
+      "command": "rm -rf cookbooks && berks vendor cookbooks"
+    },
+    {
       "type": "shell",
       "inline": "apt-get update && apt-get install curl -y"
     },
