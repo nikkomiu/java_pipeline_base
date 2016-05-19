@@ -1,6 +1,7 @@
 {
   "variables": {
     "java_version": "8",
+    "tomcat_version": "8.0.35",
     "docker_image": "java_pipeline/base"
   },
   "builders": [
@@ -27,6 +28,9 @@
         "java": {
           "jdk_version": "{{user `java_version`}}"
         },
+        "java_pipeline": {
+          "tomcat_version": "{{user `tomcat_version`}}"
+        }
       }
     }
   ],
