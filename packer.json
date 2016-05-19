@@ -5,7 +5,7 @@
   "builders": [
     {
       "type": "docker",
-      "image": "centos",
+      "image": "ubuntu:14.04",
       "commit": "true"
     }
   ],
