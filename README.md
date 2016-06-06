@@ -1,6 +1,6 @@
-# Java Pipeline
+# Java Pipeline Base
 
-This cookbooks is designed for creating the base Docker image of the Java Pipeline example application. It has been created to be built as a base image for Docker container application.
+This cookbooks is designed for creating the base infrastructure Docker image of the Java Pipeline example application. It has been created to be built as a base image for Docker container application.
 
 ## Build Docker Image
 
